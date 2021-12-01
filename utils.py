@@ -9,11 +9,11 @@ from sklearn.model_selection import train_test_split
 
 class CleanData():
     
-    def __init__(self, file_url):
+    def __init__(self, file_path):
         """ 
-        @author: Yassine
+        @author: Yassine & Achraf
         """
-        self.df = pd.read_csv(file_url)
+        self.df = pd.read_csv(file_path)
         
     def __str__(self):
         """ 
@@ -53,8 +53,27 @@ class CleanData():
         df_to_treat = (self.df.drop("id", axis=1)) if ("id" in list(self.getColumns())) else self.df
         df_to_treat= (self.df.drop("classification", axis=1)) if ("classification" in list(self.getColumns())) else self.df
         return df_to_treat
-
+    
+    def scaleData(self, dataframe,  method="minmax"): 
+        """ 
+        @author: Achraf
+        """
+        min_max_scaler = MinMaxScaler()
+        for col_name in dataframe.columns:
+                if is_numeric_dtype(self.df[col_name]):
+                    dataframe[col_name] =  min_max_scaler.fit_transform(dataframe[col_name].values.astype(float).reshape(-1, 1))
+        return dataframe
+    
+    def splitData(self, test_size, random_state, *column_names):
+        """ 
+        @author: Achraf
+        """
+        self.new_df = self.scaleData(dataframe)(self.cleanData(column_names[0]))
+        X,y = self.new_df, self.df["classification"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+        return X_train, X_test, y_train, y_test 
         
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
-print(data1)
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+X_train, X_test, y_train, y_test = data1.splitData(1/3, 42, column_names)
+prin(X_train)
