@@ -60,7 +60,7 @@ class CleanData():
         """
         min_max_scaler = MinMaxScaler()
         for col_name in dataframe.columns:
-                if is_numeric_dtype(self.df[col_name]):
+                if is_numeric_dtype(dataframe[col_name]):
                     dataframe[col_name] =  min_max_scaler.fit_transform(dataframe[col_name].values.astype(float).reshape(-1, 1))
         return dataframe
     
@@ -68,7 +68,7 @@ class CleanData():
         """ 
         @author: Achraf
         """
-        self.new_df = self.scaleData(dataframe)(self.cleanData(column_names[0]))
+        self.new_df = self.scaleData(self.cleanData(column_names[0]))
         X,y = self.new_df, self.df["classification"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test 
