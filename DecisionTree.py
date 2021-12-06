@@ -1,5 +1,3 @@
-#@author : Ala Eddine NOUALI
-
 import pandas as pd
 from sklearn.model_selection import train_test_split, ShuffleSplit, cross_val_score
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
@@ -15,7 +13,9 @@ from graphviz import Source
 
 
 class DecisionTree:
-
+    """
+    @author: Ala Eddine
+    """
     def __init__(self, n_depths=10):
         self.cvp = ShuffleSplit(1000, train_size=2 / 3)
         self.n_depths = n_depths
@@ -69,9 +69,4 @@ class DecisionTree:
         plt.boxplot(self.classification(X_train, y_train)[1])
         plt.xlabel('Max depth of the tree', size=20)
         plt.ylabel('CROSS-Validation', size=20)
-        y_tree, y_forest, y_ada = self.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
-        fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
-        ax1.plot(X_test, y_tree)
-        ax2.plot(X_test, y_forest)
-        ax3.plot(X_test, y_ada)
         plt.show()
