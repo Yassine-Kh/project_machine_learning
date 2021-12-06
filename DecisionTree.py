@@ -10,6 +10,8 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.tree import export_graphviz
+from graphviz import Source
 
 
 class DecisionTree:
@@ -29,23 +31,33 @@ class DecisionTree:
             tab_log_loss_tree[i] = np.median(log_loss)
         return tab_log_loss_tree, tab_log_loss_tree_box
 
-    def adjust_classification(self, X_train, X_test, y_train,optimal_depth):
+    def export_pdf(self, column_names, classif_model):
+        # Export the tree to "plot_tree.pdf"
+        plot_tree = export_graphviz(classif_model, out_file=None, feature_names=column_names, filled=True)
+        graph = Source(plot_tree)
+        graph.render("class_tree")
+        # Plot the tree
+        graph
+
+    def adjust_classification(self, X_train, X_test, y_train,optimal_depth,column_names):
         # Adjust classification tree with optimal depth
-        reg_tree = DecisionTreeClassifier(max_depth=optimal_depth)
-        reg_tree.fit(X_train, y_train)
-        y_tree = reg_tree.predict(X_test)
-        reg_forest = RandomForestClassifier(max_depth=optimal_depth)
-        reg_forest.fit(X_train, y_train)
-        y_forest = reg_forest.predict(X_test)
-        reg_ada = AdaBoostClassifier()
-        reg_ada.fit(X_train, y_train)
-        y_ada = reg_ada.predict(X_test)
+        classif_tree = DecisionTreeClassifier(max_depth=optimal_depth)
+        classif_tree.fit(X_train, y_train)
+        y_tree = classif_tree.predict(X_test)
+        #self.export_pdf(column_names, classif_tree)
+        classif_forest = RandomForestClassifier(max_depth=optimal_depth)
+        classif_forest.fit(X_train, y_train)
+        y_forest = classif_forest.predict(X_test)
+        classif_ada = AdaBoostClassifier()
+        classif_ada.fit(X_train, y_train)
+        y_ada = classif_ada.predict(X_test)
         return y_tree, y_forest, y_ada
 
     def calculate_metrics(self, y_test, y_pred, model):
         accuracy = accuracy_score(y_test, y_pred)
         print(model," Accuracy : ",accuracy)
         print("Classification report :\n", classification_report(y_test, y_pred))
+
 
 
     def plot(self, X_train, X_test, y_train, optimal_depth):
