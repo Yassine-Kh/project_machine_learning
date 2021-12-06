@@ -13,6 +13,8 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import numpy as np
 import matplotlib.pyplot as plt
 from DecisionTree import DecisionTree
+from plotData import plotData
+
 
 class CleanData():
 
@@ -27,6 +29,16 @@ class CleanData():
         @author: Yassine
         """
         return "This dataframe looks like this: \n\n{}".format(self.df.head())
+
+    def describeData(self):
+        """
+        @author: Ala Eddine
+        """
+        # show summary statistics
+        print(self.df.describe())
+        # plot histograms
+        self.df.hist()
+        plt.show()
 
     def getColumns(self):
         """
@@ -77,17 +89,23 @@ class CleanData():
         return X_train, X_test, y_train, y_test
 
 
+
+
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
-print(data1)
+#data1.describeData()
+
 column_names = ["variance", "skewness", "curtosis", "entropy", "class"]
 X_train, X_test, y_train, y_test = data1.arrangedData(1 / 3, 42, column_names)
-#print(X_train)
+
 classif_tree = DecisionTree()
 tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = classif_tree.classification(X_train, y_train)
 print("optimal depth = ", optimal_depth)
 
-classif_tree.plot(X_train, X_test,y_train, optimal_depth, column_names)
+classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names)
 y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
+
+plotData(X_test, y_test, y_tree,"Decision Tree")
+
 classif_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
 classif_tree.calculate_metrics(y_test, y_forest, "RandomForest")
 classif_tree.calculate_metrics(y_test, y_ada, "AdaBoost")
