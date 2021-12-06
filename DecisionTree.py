@@ -24,12 +24,16 @@ class DecisionTree:
     def classification(self,  X_train, y_train):
         tab_log_loss_tree = np.zeros(self.n_depths)
         tab_log_loss_tree_box = []
+        index = 0
         for i in range(self.n_depths):
             reg_tree = DecisionTreeClassifier(max_depth=self.depths[i])
             log_loss = np.sqrt(-cross_val_score(reg_tree, X_train, y_train, scoring='neg_log_loss', cv=self.cvp))
             tab_log_loss_tree_box.append(log_loss)
             tab_log_loss_tree[i] = np.median(log_loss)
-        return tab_log_loss_tree, tab_log_loss_tree_box
+            if tab_log_loss_tree[i] < tab_log_loss_tree[index]:
+                index = i
+        optimal_depth = index+1
+        return tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth
 
     def export_pdf(self, column_names, classif_model):
         # Export the tree to "plot_tree.pdf"
@@ -60,12 +64,12 @@ class DecisionTree:
 
 
 
-    def plot(self, X_train, X_test, y_train, optimal_depth):
+    def plot(self, X_train, X_test, y_train, optimal_depth, column_names):
         plt.plot(self.depths, self.classification(X_train, y_train)[0])
         plt.boxplot(self.classification(X_train, y_train)[1])
         plt.xlabel('Max depth of the tree', size=20)
         plt.ylabel('CROSS-Validation', size=20)
-        y_tree, y_forest, y_ada = self.adjust_classification(X_train, X_test, y_train, optimal_depth)
+        y_tree, y_forest, y_ada = self.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
         fig, (ax1, ax2, ax3) = plt.subplots(1, 3)
         ax1.plot(X_test, y_tree)
         ax2.plot(X_test, y_forest)
