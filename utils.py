@@ -58,7 +58,7 @@ class CleanData():
                 if self.df[col_name].isnull().values.any():
                     self.df[col_name] = self.df[col_name].fillna(method='bfill')
         df_to_treat = (self.df.drop("id", axis=1)) if ("id" in list(self.getColumns())) else self.df
-        df_to_treat= (self.df.drop("classification", axis=1)) if ("classification" in list(self.getColumns())) else self.df
+        df_to_treat= (self.df.drop("class", axis=1)) if ("class" in list(self.getColumns())) else self.df
         return df_to_treat
 
     def normalizeData(self, dataframe,
@@ -72,20 +72,23 @@ class CleanData():
 
     def arrangedData(self, test_size, random_state, *column_names):
         self.new_df = self.normalizeData(self.cleanData(column_names[0]))
-        X, y = self.new_df, self.df["classification"]
+        X, y = self.new_df, self.df["class"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test
 
 
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
 print(data1)
-column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+column_names = ["variance", "skewness", "curtosis", "entropy", "class"]
 X_train, X_test, y_train, y_test = data1.arrangedData(1 / 3, 42, column_names)
 #print(X_train)
-reg_tree = DecisionTree()
-#reg_tree.plot(X_train, X_test,y_train, 3)
-y_tree, y_forest, y_ada = reg_tree.adjust_classification(X_train, X_test, y_train, 3)
-reg_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
-reg_tree.calculate_metrics(y_test, y_forest, "RandomForest")
-reg_tree.calculate_metrics(y_test, y_ada, "AdaBoost")
+classif_tree = DecisionTree()
+tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = classif_tree.classification(X_train, y_train)
+print("optimal depth = ", optimal_depth)
+
+classif_tree.plot(X_train, X_test,y_train, optimal_depth, column_names)
+y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
+classif_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
+classif_tree.calculate_metrics(y_test, y_forest, "RandomForest")
+classif_tree.calculate_metrics(y_test, y_ada, "AdaBoost")
 plt.show()
