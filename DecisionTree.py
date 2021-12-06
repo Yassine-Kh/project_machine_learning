@@ -35,7 +35,7 @@ class DecisionTree:
         # Export the tree to "plot_tree.pdf"
         plot_tree = export_graphviz(classif_model, out_file=None, feature_names=column_names, filled=True)
         graph = Source(plot_tree)
-        graph.render("class_tree")
+        graph.render(str(classif_model))
         # Plot the tree
         graph
 
