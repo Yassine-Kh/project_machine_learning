@@ -3,17 +3,12 @@ Created on Wed Dec  1 10:09:33 2021
 
 """
 import pandas as pd
-from sklearn.model_selection import train_test_split, ShuffleSplit, cross_val_score
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neural_network import MLPClassifier
 from pandas.api.types import is_numeric_dtype
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-import numpy as np
 import matplotlib.pyplot as plt
 from DecisionTree import DecisionTree
-from plotData import plotData
+from plotData import plotData_banknote_authentication
 
 
 class CleanData():
@@ -92,7 +87,7 @@ class CleanData():
 
 
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
-#data1.describeData()
+data1.describeData()
 
 column_names = ["variance", "skewness", "curtosis", "entropy", "class"]
 X_train, X_test, y_train, y_test = data1.arrangedData(1 / 3, 42, column_names)
@@ -104,7 +99,9 @@ print("optimal depth = ", optimal_depth)
 classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names)
 y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
 
-plotData(X_test, y_test, y_tree,"Decision Tree")
+plotData_banknote_authentication(X_test, y_test, y_tree,"Decision Tree")
+plotData_banknote_authentication(X_test, y_test, y_forest,"Random Forest")
+plotData_banknote_authentication(X_test, y_test, y_ada,"AdaBoost")
 
 classif_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
 classif_tree.calculate_metrics(y_test, y_forest, "RandomForest")
