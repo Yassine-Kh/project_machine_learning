@@ -34,3 +34,13 @@ def test_set_columns(clean_data_class_banknote):
     data_to_clean.setColumns(column_names)
     assert (data_to_clean.getColumns()[k] == column_names[k] for k in range(len(column_names)))
 
+
+def test_check_data_banknote(clean_data_class_banknote):
+    data_to_clean, real_df = clean_data_class_banknote[0], clean_data_class_banknote[1]
+    assert data_to_clean.checkData() == 0
+
+
+def test_check_data_kidney(clean_data_class_kidney):
+    data_to_clean, real_df = clean_data_class_kidney[0], clean_data_class_kidney[1]
+    assert data_to_clean.checkData() == 24
+
