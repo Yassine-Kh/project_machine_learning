@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 
 class CleanData():
-    
+
     def __init__(self, file_path):
         """ 
         @author: Yassine & Achraf
@@ -72,8 +72,11 @@ class CleanData():
         X,y = self.new_df, self.df["classification"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test 
-        
+
+
+"""       
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
 X_train, X_test, y_train, y_test = data1.splitData(1/3, 42, column_names)
-prin(X_train)
+print(X_train)
+"""
