@@ -44,3 +44,33 @@ def test_check_data_kidney(clean_data_class_kidney):
     data_to_clean, real_df = clean_data_class_kidney[0], clean_data_class_kidney[1]
     assert data_to_clean.checkData() == 24
 
+
+@pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
+def test_clean_data(data, request):
+    data = request.getfixturevalue(data)
+    data_to_clean, real_df = data[0], data[1]
+    column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+    clean_dataframe = data_to_clean.cleanData(column_names)
+    assert data_to_clean.checkData() == 0
+    assert "id" not in list(clean_dataframe.columns) and "classification" not in list(clean_dataframe.columns)
+
+
+@pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
+def test_scale_data(data, request):
+    data = request.getfixturevalue(data)
+    data_to_clean, real_df = data[0], data[1]
+    clean_data = data_to_clean.scaleData(data_to_clean.df)
+    assert (data_to_clean[column][index] <= 1 or data_to_clean[column][index] >= 0 for index in clean_data.index
+            for column in clean_data.columns)
+
+
+@pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
+def test_split_data(data, request):
+    data = request.getfixturevalue(data)
+    data_to_clean, real_df = data[0], data[1]
+    column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+    splited_data = data_to_clean.splitData(1 / 3, 42, column_names)
+    assert (len(splited_data[0]) == floor(len(data_to_clean.df) * (2 / 3))
+            and len(splited_data[1]) == ceil(len(data_to_clean.df) / 3)
+            and len(splited_data[2]) == floor(len(data_to_clean.df) * (2 / 3))
+            and len(splited_data[3]) == ceil(len(data_to_clean.df) / 3))
