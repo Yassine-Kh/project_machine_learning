@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3221eb9-ab8e-4db3-a96b-22fc25a31914" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_utils_pytest.py" afterDir="false" />
+    <list default="true" id="e3221eb9-ab8e-4db3-a96b-22fc25a31914" name="Changes" comment="Starting test clean data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_utils/test_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_utils_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_utils_pytest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +48,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_utils_pytest.test_clean_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="projet_intro_ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_utils_pytest.test_clean_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_utils_pytest.test_scale_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="projet_intro_ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_utils_pytest.test_scale_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_utils_pytest.test_split_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="projet_intro_ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_utils_pytest.test_split_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in test_utils_pytest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="projet_intro_ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,7 +107,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests in test_utils_pytest.py" />
+        <item itemvalue="Python tests.Python tests for test_utils_pytest.test_split_data" />
         <item itemvalue="Python.utils" />
+        <item itemvalue="Python tests.Python tests for test_utils_pytest.test_scale_data" />
+        <item itemvalue="Python tests.Python tests for test_utils_pytest.test_clean_data" />
       </list>
     </recent_temporary>
   </component>
@@ -80,6 +123,14 @@
       <option name="presentableId" value="Default" />
       <updated>1639009741453</updated>
     </task>
+    <task id="LOCAL-00001" summary="Starting test clean data">
+      <created>1639016308312</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639016308312</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,5 +144,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Starting test clean data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting test clean data" />
   </component>
 </project>
