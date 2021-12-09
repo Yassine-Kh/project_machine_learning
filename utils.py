@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 from DecisionTree import DecisionTree
-from plotData import plotData_banknote_authentication
+from plotData import plotData
 
 
 class CleanData():
@@ -99,9 +99,9 @@ print("optimal depth = ", optimal_depth)
 classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names)
 y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
 
-plotData_banknote_authentication(X_test, y_test, y_tree,"Decision Tree")
-plotData_banknote_authentication(X_test, y_test, y_forest,"Random Forest")
-plotData_banknote_authentication(X_test, y_test, y_ada,"AdaBoost")
+plotData(X_test, y_test, y_tree,"Decision Tree")
+plotData(X_test, y_test, y_forest,"Random Forest")
+plotData(X_test, y_test, y_ada,"AdaBoost")
 
 classif_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
 classif_tree.calculate_metrics(y_test, y_forest, "RandomForest")
