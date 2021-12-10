@@ -6,7 +6,8 @@ import pandas as pd
 from pandas.api.types import is_numeric_dtype
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
-
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.decomposition import PCA
 
 class CleanData:
 
@@ -56,6 +57,47 @@ class CleanData:
                 "classification" in list(self.getColumns())) else self.df
         return df_to_treat
 
+
+    def defineType(self):
+        """ 
+        @author: Achraf
+        """
+        numericColumns=[]
+        stringColumns=[]
+        for column in dataframe.columns:
+            if dataframe[column].dtype in ['int32','int64','float32','float64','int','float']:
+                numericColumns.append(column)
+            else : 
+                stringColumns.append(column)
+        
+        return numericColumns, stringColumns
+    
+    def encodestring(self, dataframe, stringColumns,numericColumns):
+        """ 
+        @author: Achraf
+        """
+        encoder = OrdinalEncoder()
+        if stringColumns != []:
+            stringData = dataframe[stringColumns]
+            encodedData = encoder.fit_transform(stringData)
+            columns = stringColumns
+            data_tr_table = pd.DataFrame(encodedData, columns = columns)
+        else :
+            return dataframe
+        data_tr_table= pd.concat([data_tr_table,dataframe[numericColumns]], axis=1)
+        return data_tr_table
+
+    def reduceDimension(self, dataframe):
+        """ 
+        @author: Achraf
+        """
+        pca = PCA(n_components=0.95)
+        pca.fit(dataframe)
+        reduced = pca.transform(dataframe)
+        reduced= pd.DataFrame(reduced[:,:len(reduced[0])])
+        reduced[dataframe.columns[-1]] = dataframe.iloc[:,-1]
+        return reduced
+
     def scaleData(self, dataframe):
         """ 
         @author: Achraf
@@ -71,7 +113,8 @@ class CleanData:
         """ 
         @author: Achraf
         """
-        self.new_df = self.scaleData(self.cleanData(column_names[0]))
+        numericColumns, stringColumns = defineType(df) 
+        self.new_df = self.reduceDimension(self.scaleData(self.encodestring(self.cleanData(column_names[0]), stringColumns, numericColumns)))
         X, y = self.new_df, self.df["classification"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test
