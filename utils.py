@@ -96,8 +96,8 @@ classif_tree = DecisionTree()
 tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = classif_tree.classification(X_train, y_train)
 print("optimal depth = ", optimal_depth)
 
-classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names)
-y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names)
+classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names[:-2])
+y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names[:-2])
 
 plotData(X_test, y_test, y_tree,"Decision Tree")
 plotData(X_test, y_test, y_forest,"Random Forest")
