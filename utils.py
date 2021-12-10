@@ -142,19 +142,20 @@ class CleanData:
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
 data1.describeData()
 
-column_names = ["variance", "skewness", "curtosis", "entropy", "class"]
-X_train, X_test, y_train, y_test = data1.arrangedData(1 / 3, 42, column_names)
+column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
+
 
 classif_tree = DecisionTree()
 tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = classif_tree.classification(X_train, y_train)
 print("optimal depth = ", optimal_depth)
 
-classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names[:-2])
-y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names[:-2])
+classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names[:-1])
+y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names[:-1])
 
-plotData(X_test, y_test, y_tree,"Decision Tree")
-plotData(X_test, y_test, y_forest,"Random Forest")
-plotData(X_test, y_test, y_ada,"AdaBoost")
+plotData(X_test, y_test, y_tree,"variance","entropy","Decision Tree")
+plotData(X_test, y_test, y_forest,"variance","entropy","Random Forest")
+plotData(X_test, y_test, y_ada,"variance","entropy","AdaBoost")
 
 classif_tree.calculate_metrics(y_test, y_tree, "DecisionTree")
 classif_tree.calculate_metrics(y_test, y_forest, "RandomForest")
