@@ -41,21 +41,21 @@ class DecisionTree:
         graph = Source(plot_tree)
         graph.render(str(classif_model))
         # Plot the tree
-        graph
+        return graph
 
-    def adjust_classification(self, X_train, X_test, y_train,optimal_depth,column_names):
+    def adjust_classification(self, X_train, X_test, y_train,optimal_depth, column_names):
         # Adjust classification tree with optimal depth
         classif_tree = DecisionTreeClassifier(max_depth=optimal_depth)
         classif_tree.fit(X_train, y_train)
         y_tree = classif_tree.predict(X_test)
-        #self.export_pdf(column_names, classif_tree)
+        graph = self.export_pdf(column_names, classif_tree)
         classif_forest = RandomForestClassifier(max_depth=optimal_depth)
         classif_forest.fit(X_train, y_train)
         y_forest = classif_forest.predict(X_test)
         classif_ada = AdaBoostClassifier()
         classif_ada.fit(X_train, y_train)
         y_ada = classif_ada.predict(X_test)
-        return y_tree, y_forest, y_ada
+        return y_tree, y_forest, y_ada, graph
 
     def calculate_metrics(self, y_test, y_pred, model):
         accuracy = accuracy_score(y_test, y_pred)
