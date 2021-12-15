@@ -33,20 +33,21 @@ def clean_data_class_kidney():
 def test_classification(data, request):
     data = request.getfixturevalue(data)
     clean_data, real_df = data[0], data[1]
-    decision_tree_model = DecisionTree()
-    tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = decision_tree_model.classification(clean_data[0],
-                                                                                                 clean_data[2])
+    X_train, X_test, y_train, y_test = clean_data
+    decision_tree_model = DecisionTree(len(real_df.columns))
+    tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = decision_tree_model.classification(X_train,
+                                                                                                 y_train)
     assert optimal_depth >= 2
     
 
 @pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
-def test_export_pdf(data, request):
+def test_export_png(data, request):
     data = request.getfixturevalue(data)
     clean_data, real_df = data[0], data[1]
     X_train, X_test, y_train, y_test = clean_data
-    classification_tree = DecisionTreeClassifier(max_depth=3)
+    classification_tree = DecisionTreeClassifier(max_depth=len(real_df.columns))
     classification_tree.fit(X_train,y_train)
-    decision_tree_model = DecisionTree()
+    decision_tree_model = DecisionTree(len(real_df.columns))
     column_names = list(X_train.columns)
     graph = decision_tree_model.export_png(column_names, classification_tree)
     assert graph is not None
@@ -57,7 +58,7 @@ def test_adjust_classification(data, request):
     data = request.getfixturevalue(data)
     clean_data, real_df = data[0], data[1]
     X_train, X_test, y_train, y_test = clean_data
-    decision_tree_model = DecisionTree()
+    decision_tree_model = DecisionTree(len(real_df.columns))
     y_tree, y_forest, y_ada = decision_tree_model.adjust_classification(X_train, X_test, y_train, optimal_depth=3)
     assert isinstance(y_tree, numpy.ndarray) and isinstance(y_forest, numpy.ndarray) and isinstance(y_ada, numpy.ndarray)
 

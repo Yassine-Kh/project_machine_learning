@@ -14,9 +14,9 @@ class DecisionTree:
     @author: Ala Eddine
     """
 
-    def __init__(self, n_depths=10):
+    def __init__(self, nb_columns):
         self.cvp = ShuffleSplit(1000, train_size=2 / 3)
-        self.n_depths = n_depths
+        self.n_depths = nb_columns
         self.depths = np.linspace(1, 10, self.n_depths)
 
     def classification(self, X_train, y_train):

@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.decomposition import PCA
 
+
 class CleanData:
 
     def __init__(self, file_path):
