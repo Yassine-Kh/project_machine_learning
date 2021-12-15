@@ -16,8 +16,8 @@ class DecisionTree:
 
     def __init__(self, nb_columns):
         self.cvp = ShuffleSplit(1000, train_size=2 / 3)
-        self.n_depths = nb_columns
-        self.depths = np.linspace(1, 10, self.n_depths)
+        self.n_depths = max(nb_columns, 10)
+        self.depths = np.linspace(1, self.n_depths, self.n_depths)
 
     def cross_validation(self, X_train, y_train):
         """

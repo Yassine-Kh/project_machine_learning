@@ -1,4 +1,4 @@
-from utils import *
+from sklearn import svm
 
 
 class SVM:

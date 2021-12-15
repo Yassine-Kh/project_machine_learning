@@ -34,12 +34,12 @@ def clean_data_class_kidney():
 
 
 @pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
-def test_classification(data, request):
+def test_cross_validation(data, request):
     data = request.getfixturevalue(data)
     clean_data, real_df = data[0], data[1]
     X_train, X_test, y_train, y_test = clean_data
     decision_tree_model = DecisionTree(len(real_df.columns))
-    tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = decision_tree_model.classification(X_train,
+    tab_log_loss_tree, tab_log_loss_tree_box, optimal_depth = decision_tree_model.cross_validation(X_train,
                                                                                                  y_train)
     assert optimal_depth >= 2
 
