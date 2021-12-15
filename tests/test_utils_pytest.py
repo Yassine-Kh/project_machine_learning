@@ -4,6 +4,9 @@ import pytest
 import pandas as pd
 from math import *
 from utils import CleanData
+"""
+    @author: Yassine Khalsi
+"""
 
 @pytest.fixture
 def example_dataframe():

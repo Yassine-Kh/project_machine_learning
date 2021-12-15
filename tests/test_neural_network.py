@@ -3,6 +3,9 @@ import pandas as pd
 
 from models.neural_network import NeuralNetwork
 from utils import CleanData
+"""
+    @author: Yassine Khalsi
+"""
 
 
 @pytest.fixture
