@@ -133,17 +133,3 @@ class CleanData:
         X, y = self.new_df, self.df["classification"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test
-
-
-data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
-data1.describeData()
-
-column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
-X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
-print(list(X_train.columns))
-"""
-#file_path = "kidney_disease.csv"
-#data1 = CleanData(file_path)
-column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
-X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
-"""

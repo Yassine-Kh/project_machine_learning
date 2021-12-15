@@ -1,7 +1,5 @@
 from sklearn.neural_network import MLPClassifier
 
-from utils import *
-
 
 class NeuralNetwork:
     def __init__(self, solver="lbfgs", layers_sizes=(5, 2), activation="logistic", learning_rate=0.001):
@@ -29,23 +27,3 @@ class NeuralNetwork:
 
     def assertEqual(self, param, param1):
         return param == param1
-
-
-#    def __eq__(self, param, param1):
-#        return param == param1
-
-"""
-data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
-column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
-X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
-
-modelNeural = NeuralNetwork(solver="lbfgs", layers_sizes=(5, 2), activation="logistic", learning_rate=0.001)
-#print(modelNeural.assertEqual(str(modelNeural), 'Please train your model first'))
-# solver=["lbfgs", "adam", "sgd"] even though lbgs is used in classification
-# layers_sizes= choose different number of layers and different number of neurons per layer (last layer has to be 2)
-# activation=["logistic", "tanh"]
-# learning_rate=[range(0.001,0.1,10)]
-
-modelNeural.fitAndScore(X_train, X_test, y_train, y_test)
-print(modelNeural)
-"""
