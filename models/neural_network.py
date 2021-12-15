@@ -66,4 +66,6 @@ def bestParameters(X_train, X_test, y_train, y_test, layers_sizes,activations,le
         max_value = max(neuralMetric)
         max_index = neuralMetric.index(max_value)
         
-        return f"The neural network with the best accuracy has the parameters: layer size: {neuralModels[max_index][0]} activation function: {neuralModels[max_index][1]}, learning rate {neuralModels[max_index][2]}, with an accuracy score of : {max_value}"
+        return f"The neural network with the best accuracy has the parameters: layer size: {neuralModels[max_index][0]} " \
+               f"activation function: {neuralModels[max_index][1]}, learning rate {neuralModels[max_index][2]}, " \
+               f"with an accuracy score of : {max_value}"

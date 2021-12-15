@@ -1,7 +1,8 @@
 import pytest
 import pandas as pd
+import numpy
 
-from models.neural_network import NeuralNetwork
+from models.neural_network import NeuralNetwork, bestParameters
 from utils import CleanData
 """
     @author: Yassine Khalsi
@@ -46,3 +47,14 @@ def test_fitAndScore(data, request):
     assert neural_model.assertEqual(str(neural_model), 'Please train your model first')
     neural_model.fitAndScore(X_train, X_test, y_train)
     assert not neural_model.assertEqual(str(neural_model), 'Please train your model first')
+
+@pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
+def test_bestParameters(data, request):
+    data = request.getfixturevalue(data)
+    data_to_clean, real_df = data[0], data[1]
+    column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+    X_train, X_test, y_train, y_test = data_to_clean.splitData(1 / 3, 42, column_names)
+    layers_sizes = [(5, 2), (4, 2), (6, 2), (3, 2), (4, 4, 2)]
+    activations = ["logistic", "tanh"]
+    learning_rate = numpy.linspace(0.001, 0.1, 10)
+    assert type(bestParameters(X_train, X_test, y_train, y_test, layers_sizes, activations, learning_rate)) == str
