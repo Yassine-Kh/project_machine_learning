@@ -17,17 +17,17 @@ class CleanData:
     def __init__(self, file_path):
         """
         @author: Yassine & Achraf
-        
-        
-        Args: 
+
+
+        Args:
         :param file_path        : path for the dataset.
-            
-        Returns: 
+
+        Returns:
         NONE
-        
+
         import the csv into a pandas df
         """
-        
+
         self.df = pd.read_csv(file_path)
 
     def __str__(self):
@@ -84,14 +84,14 @@ class CleanData:
     def defineType(dataframe):
         """
         @author: Achraf
-        Args: 
+        Args:
         :param dataframe        : pandas dataframe.
-            
-        Returns: 
+
+        Returns:
         numeric_columns, string_columns
-        
+
         Returns the names of numeric and string columns
-        
+
         """
         numeric_columns = []
         string_columns = []
@@ -106,14 +106,14 @@ class CleanData:
     def encodestring(dataframe, string_columns, numeric_columns):
         """
         @author: Achraf
-        Args: 
+        Args:
         :param dataframe        : pandas dataframe.
         :param string_columns   : string array
         :param numeric_columns  : string array
 
-        Returns: 
+        Returns:
         data_tr_table
-        
+
         Returns a dataframe after converting the string values into ints
         """
         encoder = OrdinalEncoder()
@@ -131,12 +131,12 @@ class CleanData:
     def reduceDimension(dataframe):
         """
         @author: Achraf
-        Args: 
+        Args:
         :param dataframe        : pandas dataframe.
 
-        Returns: 
+        Returns:
         reduced
-        
+
         Returns a dataframe after applying PCA with a cut off variance of 0.95
         """
         pca = PCA(n_components=0.95)
@@ -149,12 +149,12 @@ class CleanData:
     def scaleData(self, dataframe):
         """
         @author: Achraf
-        Args: 
+        Args:
         :param dataframe        : pandas dataframe.
 
-        Returns: 
+        Returns:
         dataframe
-        
+
         Returns a dataframe after scaling the data with a MinMax scaler
         """
         min_max_scaler = MinMaxScaler()
@@ -167,16 +167,16 @@ class CleanData:
     def splitData(self, test_size=1 / 3, random_state=42, *column_names):
         """
         @author: Achraf
-        Args: 
+        Args:
         :param test_size        : fraction.
         :param random_state     : int.
         :param columns_names    : string .
-        
-        
 
-        Returns: 
+
+
+        Returns:
         X_train, X_test, y_train, y_test
-        
+
         Returns the data split into training and testing after the applying the different cleaning functions
         """
         tempdf=self.cleanData(column_names[0])
