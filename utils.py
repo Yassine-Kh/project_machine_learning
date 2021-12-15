@@ -7,8 +7,6 @@ from pandas.api.types import is_numeric_dtype
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
-from DecisionTree import DecisionTree
-from plotData import plotData
 
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.decomposition import PCA

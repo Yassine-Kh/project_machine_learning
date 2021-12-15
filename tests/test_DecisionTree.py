@@ -1,11 +1,9 @@
-from array import array
-
 import numpy
 import pytest
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
-from DecisionTree import DecisionTree
+from models.DecisionTree import DecisionTree
 from utils import CleanData
 
 
