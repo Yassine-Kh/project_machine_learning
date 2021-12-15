@@ -44,5 +44,5 @@ def test_fitAndScore(data, request):
     X_train, X_test, y_train, y_test = data_to_clean.splitData(1 / 3, 42, column_names)
     neural_model = NeuralNetwork(solver="lbfgs", layers_sizes=(5, 2), activation="logistic", learning_rate=0.001)
     assert neural_model.assertEqual(str(neural_model), 'Please train your model first')
-    neural_model.fitAndScore(X_train, X_test, y_train, y_test)
+    neural_model.fitAndScore(X_train, X_test, y_train)
     assert not neural_model.assertEqual(str(neural_model), 'Please train your model first')
