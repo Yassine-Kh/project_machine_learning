@@ -4,7 +4,7 @@ This project is implemented in Python.
 The objective of this project is to develop a code allowing the binary classification onto two different datasets : Banknote Authentication Dataset and Chronic Kidney
 Disease Dataset.
 
-We can find a repository called models in which we implemented several classification methods: SVM, Neural Network and Decision tree as well as Ada Boost and Random Forest.
+You can find a repository called models in which we implemented several classification methods: SVM, Neural Network and Decision tree as well as Ada Boost and Random Forest.
 
 The repository test aims to test all implemented functions(unitary tests using pytest) .
 
