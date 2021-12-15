@@ -31,14 +31,20 @@ class CleanData:
         self.df = pd.read_csv(file_path)
 
     def __str__(self):
-        """
-        @author: Yassine
-        """
         return "This dataframe looks like this: \n\n{}".format(self.df.head())
 
     def describeData(self):
         """
         @author: Ala Eddine
+
+
+        Args:
+        :param NONE
+
+        Returns:
+        NONE
+
+        plot histogram that shows summary statistics
         """
         # show summary statistics
         print(self.df.describe())
@@ -48,17 +54,43 @@ class CleanData:
 
     def getColumns(self):
         """
-        @author: Yassine
+
+        @author: Yassine Khalsi
+
+        Args:
+        :param NONE
+
+        Returns:
+        self.df.columns
+
+        Returns the columns of the dataframe
         """
         return self.df.columns
 
     def setColumns(self, column_names):
+        """
+        set the column names
+        @author: Yassine Khalsi
+        Args:
+        :param column_names : list containing column names
+
+        Returns:
+        NONE
+
+        """
         self.df.columns = column_names
 
     def checkData(self):
         """
-        @author: Yassine
         Check if the data contains any null values
+        @author: Yassine Khalsi
+        Args:
+        :param NONE
+
+        Returns:
+        counter
+
+        Returns a counter of the number of times we encountered a null value in the dataframe
         """
         counter = 0
         for col_name in self.getColumns():
@@ -68,7 +100,14 @@ class CleanData:
 
     def cleanData(self, column_names):
         """
-        @author: Yassine
+        @author: Yassine Khalsi
+        Args:
+        :param column_names        : list of column names of the dataframe.
+
+        Returns:
+        df_to_treat
+
+        Returns a dataframe with no column classification nor id
         """
         if any(element.isdigit() for element in self.getColumns()):
             self.setColumns(column_names)
