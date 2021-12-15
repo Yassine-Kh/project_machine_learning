@@ -61,5 +61,6 @@ def bestParameters(X_train, X_test, y_train, y_test, kernels,gammas,tols):
                     svmMetric.append(accuracy_score(y_test,y_pred))
         max_value = max(svmMetric)
         max_index = svmMetric.index(max_value)
-        
+        bestpred=SVM(kernel=svmModels[max_index][0],  gamma=svmModels[max_index][1], tol=svmModels[max_index][2]).fitAndPredict(X_train, X_test, y_train)
+        print("Classification report :\n", classification_report(y_test, bestpred))
         return f"The SVM model with the best accuracy has the parameters: kernel: {svmModels[max_index][0]}, gamma: {svmModels[max_index][1]}, tol {svmModels[max_index][2]}, with an accuracy score of : {max_value}"
