@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Finish testing Decision tree class">
-      <change beforePath="$PROJECT_DIR$/tests/test_neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_neural_network.py" afterDir="false" />
-    </list>
+    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Starting test clean data" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/develop" />
+    <option name="OPTIONS">
+      <set>
+        <option value="INTERACTIVE" />
+      </set>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -170,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639016308312</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finish testing Neural Network class">
+      <created>1639534414098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639534414098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +200,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Starting test clean data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting test clean data" />
+    <MESSAGE value="Finish testing Neural Network class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish testing Neural Network class" />
   </component>
 </project>
