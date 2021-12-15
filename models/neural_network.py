@@ -6,6 +6,12 @@ class NeuralNetwork:
     def __init__(self, solver="lbfgs", layers_sizes=(5, 2), activation="logistic", learning_rate=0.001):
         """ 
         @author: Achraf
+        
+        params: solver          : The solver for weight optimization. always lbfgs in for classification
+        params: layers_sizes    : A tuple containing the layers sizes
+        params: activation      : Activation function for the hidden layer
+        params: learning_rate   : The initial learning rate used
+        
         """
         self.model = MLPClassifier(solver=solver, hidden_layer_sizes=layers_sizes, random_state=1,
                                    activation=activation, learning_rate_init=learning_rate)
@@ -22,6 +28,12 @@ class NeuralNetwork:
     def fitAndScore(self, X_train, X_test, y_train):
         """ 
         @author: Achraf
+        params: X_train :pandas dataframe
+        params: X_test  :pandas dataframe
+        params: y_train : numpy array
+        
+        
+        output: prediction done on X_test
         """
         self.model.fit(X_train, y_train)
         return self.model.predict(X_test)
@@ -34,6 +46,12 @@ class NeuralNetwork:
 def bestParameters(X_train, X_test, y_train, y_test, layers_sizes,activations,learning_rate):
         """ 
         @author: Achraf
+        params: layers_sizes    : Array of a tuple containing the layers sizes
+        params: activation      : Array of activation function for the hidden layer
+        params: learning_rate   : Array of the initial learning rate used
+        
+        
+        output: The parameters of the model with the best accuracy
         """
         neuralModels=[]
         neuralMetric=[]
