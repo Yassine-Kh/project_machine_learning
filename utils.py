@@ -4,8 +4,10 @@ Created on Wed Dec  1 10:09:33 2021
 """
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
+
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.decomposition import PCA
 
@@ -13,19 +15,29 @@ from sklearn.decomposition import PCA
 class CleanData:
 
     def __init__(self, file_path):
-        """ 
+        """
         @author: Yassine & Achraf
         """
         self.df = pd.read_csv(file_path)
 
     def __str__(self):
-        """ 
+        """
         @author: Yassine
         """
         return "This dataframe looks like this: \n\n{}".format(self.df.head())
 
+    def describeData(self):
+        """
+        @author: Ala Eddine
+        """
+        # show summary statistics
+        print(self.df.describe())
+        # plot histograms
+        self.df.hist()
+        plt.show()
+
     def getColumns(self):
-        """ 
+        """
         @author: Yassine
         """
         return self.df.columns
@@ -45,7 +57,7 @@ class CleanData:
         return counter
 
     def cleanData(self, column_names):
-        """ 
+        """
         @author: Yassine
         """
         if any(element.isdigit() for element in self.getColumns()):
@@ -101,7 +113,7 @@ class CleanData:
         return reduced
 
     def scaleData(self, dataframe):
-        """ 
+        """
         @author: Achraf
         """
         min_max_scaler = MinMaxScaler()
@@ -112,7 +124,7 @@ class CleanData:
         return dataframe
 
     def splitData(self, test_size=1 / 3, random_state=42, *column_names):
-        """ 
+        """
         @author: Achraf
         """
         tempdf=self.cleanData(column_names[0])
@@ -124,6 +136,14 @@ class CleanData:
 
 
 data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt")
+data1.describeData()
+
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
-essain = data1.scaleData(data1.df)
 X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
+print(list(X_train.columns))
+"""
+#file_path = "kidney_disease.csv"
+#data1 = CleanData(file_path)
+column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
+X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
+"""
