@@ -58,7 +58,7 @@ class CleanData:
         return df_to_treat
 
 
-    def defineType(self):
+    def defineType(self, dataframe):
         """ 
         @author: Achraf
         """
@@ -113,8 +113,9 @@ class CleanData:
         """ 
         @author: Achraf
         """
-        numericColumns, stringColumns = defineType(df) 
-        self.new_df = self.reduceDimension(self.scaleData(self.encodestring(self.cleanData(column_names[0]), stringColumns, numericColumns)))
+        tempdf=self.cleanData(column_names[0])
+        numericColumns, stringColumns = self.defineType(tempdf)
+        self.new_df = self.reduceDimension(self.scaleData(self.encodestring(tempdf, stringColumns, numericColumns)))
         X, y = self.new_df, self.df["classification"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
         return X_train, X_test, y_train, y_test
