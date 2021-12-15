@@ -141,7 +141,8 @@ data1.describeData()
 
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
 X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
-
+print(list(X_train.columns))
+"""
 #file_path = "kidney_disease.csv"
 #data1 = CleanData(file_path)
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
@@ -154,7 +155,7 @@ print("optimal depth = ", optimal_depth)
 classif_tree.plot(X_train, X_test, y_train, optimal_depth, column_names[:-1])
 y_tree, y_forest, y_ada = classif_tree.adjust_classification(X_train, X_test, y_train, optimal_depth, column_names[:-1])
 
-"""
+
 plotData(X_test, y_test, y_tree, "Decision Tree")
 plotData(X_test, y_test, y_forest, "Random Forest")
 plotData(X_test, y_test, y_ada, "AdaBoost")

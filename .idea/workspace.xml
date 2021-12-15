@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3221eb9-ab8e-4db3-a96b-22fc25a31914" name="Changes" comment="commit files test">
-      <change afterPath="$PROJECT_DIR$/tests/test_DecisionTree.py" afterDir="false" />
-    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Starting test clean data" />
-    <list default="true" id="e3221eb9-ab8e-4db3-a96b-22fc25a31914" name="Changes" comment="workspace changed">
+    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DecisionTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_DecisionTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_DecisionTree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,126 +12,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/feature/tree_class" />
-    <option name="OPTIONS">
-      <set>
-        <option value="INTERACTIVE" />
-      </set>
-    </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/develop" />
-    <option name="OPTIONS">
-      <set>
-        <option value="INTERACTIVE" />
-      </set>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="feature/tree_class" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Creation branch feature/tree_reg" />
-        <option name="rewordedMessage" value="Construction of tree classification model" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="onto" value="f1aa6cdf5ee1cce5ba4bf9a31adae64ca9f862ae" />
-  </component>
-  <component name="GitRewordedCommitMessages">
-    <option name="onto" value="f1aa6cdf5ee1cce5ba4bf9a31adae64ca9f862ae" />
-  </component>
-  <component name="ProjectId" id="221euCClfF2I09wdBfz4yUSLVvf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="22IDSxKY263FVVRrm51GvuUhkfm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yassine\Desktop\projet_intro_ML\models" />
-      <recent name="C:\Users\Yassine\Desktop\projet_intro_ML\tests" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_neural_network.test_fitAndScore">
+  <component name="RunManager" selected="Python tests.Python tests for test_DecisionTree.test_adjust_classification">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="projet_intro_ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Yassine\AppData\Local\Microsoft\WindowsApps\python3.8.exe" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-  <component name="RunManager" selected="Python tests.Python tests for test_utils_pytest.test_encodestring">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="projet_intro_ML" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="projet_intro_ML" />
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yassine\Desktop\projet_intro_ML\models" />
-      <recent name="C:\Users\Yassine\Desktop\projet_intro_ML\tests" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.test_DecisionTree">
-    <configuration name="test_DecisionTree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\Yassine\Desktop\projet_intro_ML\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_DecisionTree.py" />
+      <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +49,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_neural_network.test_fitAndScore" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="projet_intro_ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,14 +56,11 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Yassine\AppData\Local\Microsoft\WindowsApps\python3.8.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_neural_network.test_fitAndScore&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -167,8 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_utils_pytest.test_split_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-    <configuration name="Python tests for test_DecisionTree.test_classification" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_DecisionTree.test_adjust_classification" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="projet_intro_ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,11 +80,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_DecisionTree.test_classification&quot;" />
+      <option name="_new_target" value="&quot;test_DecisionTree.test_adjust_classification&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_neural_network.test_fitAndScore" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_DecisionTree.test_export_pdf" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="projet_intro_ML" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -192,9 +94,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_neural_network.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <option name="_new_target" value="&quot;test_neural_network.test_fitAndScore&quot;" />
+      <option name="_new_target" value="&quot;test_DecisionTree.test_export_pdf&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -212,40 +112,47 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in bin" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="projet_intro_ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Yassine\AppData\Local\Microsoft\WindowsApps\python3.8.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python tests.pytest in bin" />
+      <item itemvalue="Python tests.Python tests in test_DecisionTree.py" />
       <item itemvalue="Python.utils" />
-      <item itemvalue="Python tests.Python tests for test_neural_network.test_fitAndScore" />
-      <item itemvalue="Python tests.Python tests for test_utils_pytest.test_split_data" />
-      <item itemvalue="Python tests.Python tests in test_neural_network.py" />
-      <item itemvalue="Python tests.Python tests in test_utils_pytest.py" />
+      <item itemvalue="Python tests.Python tests for test_DecisionTree.test_export_pdf" />
+      <item itemvalue="Python tests.Python tests for test_DecisionTree.test_adjust_classification" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_neural_network.test_fitAndScore" />
-        <item itemvalue="Python tests.Python tests in test_neural_network.py" />
-        <item itemvalue="Python tests.Python tests in test_utils_pytest.py" />
-        <item itemvalue="Python tests.Python tests for test_utils_pytest.test_split_data" />
+        <item itemvalue="Python tests.Python tests for test_DecisionTree.test_adjust_classification" />
+        <item itemvalue="Python tests.Python tests for test_DecisionTree.test_export_pdf" />
         <item itemvalue="Python.utils" />
+        <item itemvalue="Python tests.Python tests in test_DecisionTree.py" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e3221eb9-ab8e-4db3-a96b-22fc25a31914" name="Changes" comment="" />
-      <created>1639009741453</created>
+      <changelist id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="" />
+      <created>1639516210753</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1639009741453</updated>
+      <updated>1639516210753</updated>
     </task>
-    <task id="LOCAL-00001" summary="Starting test clean data">
-      <created>1639016308312</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1639016308312</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,13 +165,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Starting test clean data" />
-    <MESSAGE value="commit files test" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit files test" />
-    <MESSAGE value="Finish testing Neural Network class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish testing Neural Network class" />
   </component>
 </project>
