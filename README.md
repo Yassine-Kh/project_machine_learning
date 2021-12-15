@@ -8,7 +8,7 @@ We can find a repository called models in which we implemented several classific
 
 The repository test aims to test all implemented functions(unitary tests using pytest) .
 
-The file utils contains the class CleanData which is very important to format the datasets before applying all methods.
+The file utils contains the class CleanData which is very important to format the datasets before applying all methods and applying PCA method on our dataset.
 
 Finally a jupyter Notebook called main presents the results on both databases. 
 
