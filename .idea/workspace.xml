@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Updating tests to Neural Network">
+    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Updating neural networks imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_banknote.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_banknote.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotData.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_neural_network.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +219,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639589226691</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updating neural networks imports">
+      <created>1639595330953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639595330953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updating neural networks imports">
+      <created>1639595699119</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639595699119</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updating neural networks imports">
+      <created>1639597198792</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639597198792</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +261,7 @@
     <MESSAGE value="Testing SVM model" />
     <MESSAGE value="Updating test methods" />
     <MESSAGE value="Updating docstrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating docstrings" />
+    <MESSAGE value="Updating neural networks imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating neural networks imports" />
   </component>
 </project>

@@ -1,5 +1,5 @@
 from sklearn.neural_network import MLPClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 
 
 class NeuralNetwork:
@@ -37,14 +37,13 @@ class NeuralNetwork:
         """
         self.model.fit(X_train, y_train)
         return self.model.predict(X_test)
-    
+
     def assertEqual(self, param, param1):
         return param == param1
 
 
-
-def bestParameters(X_train, X_test, y_train, y_test, layers_sizes,activations,learning_rate):
-        """ 
+def bestParameters(X_train, X_test, y_train, y_test, layers_sizes, activations, learning_rate):
+    """
         @author: Achraf
         params: layers_sizes    : Array of a tuple containing the layers sizes
         params: activation      : Array of activation function for the hidden layer
@@ -53,22 +52,24 @@ def bestParameters(X_train, X_test, y_train, y_test, layers_sizes,activations,le
         
         output: The parameters of the model with the best accuracy
         """
-        neuralModels=[]
-        neuralMetric=[]
-        for layerSize in layers_sizes:
-            for activation in activations:
-                for lr in learning_rate:
-                    neuralModel=NeuralNetwork(solver="lbfgs", layers_sizes=layerSize,
-                                   activation=activation, learning_rate=lr)
-                    neuralModels.append((layerSize, activation, lr))
-                    y_pred=neuralModel.fitAndScore(X_train, X_test, y_train)
-                    neuralMetric.append(accuracy_score(y_test,y_pred))
-        max_value = max(neuralMetric)
-        max_index = neuralMetric.index(max_value)
-        
-        bestpred=NeuralNetwork(solver="lbfgs",layers_sizes=neuralModels[max_index][0],  activation=neuralModels[max_index][1], learning_rate=neuralModels[max_index][2]).fitAndPredict(X_train, X_test, y_train)
-        print("Classification report :\n", classification_report(y_test, bestpred))
-        
-        return f"The neural network with the best accuracy has the parameters: layer size: {neuralModels[max_index][0]} " \
-               f"activation function: {neuralModels[max_index][1]}, learning rate {neuralModels[max_index][2]}, " \
-               f"with an accuracy score of : {max_value}"
+    neuralModels = []
+    neuralMetric = []
+    for layerSize in layers_sizes:
+        for activation in activations:
+            for lr in learning_rate:
+                neuralModel = NeuralNetwork(solver="lbfgs", layers_sizes=layerSize,
+                                            activation=activation, learning_rate=lr)
+                neuralModels.append((layerSize, activation, lr))
+                y_pred = neuralModel.fitAndScore(X_train, X_test, y_train)
+                neuralMetric.append(accuracy_score(y_test, y_pred))
+    max_value = max(neuralMetric)
+    max_index = neuralMetric.index(max_value)
+
+    bestpred = NeuralNetwork(solver="lbfgs", layers_sizes=neuralModels[max_index][0],
+                             activation=neuralModels[max_index][1],
+                             learning_rate=neuralModels[max_index][2]).fitAndScore(X_train, X_test, y_train)
+    print("Classification report :\n", classification_report(y_test, bestpred))
+
+    return f"The neural network with the best accuracy has the parameters: layer size: {neuralModels[max_index][0]} " \
+           f"activation function: {neuralModels[max_index][1]}, learning rate {neuralModels[max_index][2]}, " \
+           f"with an accuracy score of : {max_value}"
