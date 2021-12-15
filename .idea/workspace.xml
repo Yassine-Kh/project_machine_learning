@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Updating docstrings">
+    <list default="true" id="094ecb13-1fcc-4440-ad12-1c6055ba48d5" name="Changes" comment="Updating tests to Neural Network">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_banknote.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_banknote.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotData.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_neural_network.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,12 +153,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.pytest in bin" />
-      <item itemvalue="Python tests.Python tests in test_DecisionTree.py" />
-      <item itemvalue="Python tests.Python tests in tests" />
       <item itemvalue="Python tests.Python tests for test_DecisionTree.test_classification" />
-      <item itemvalue="Python tests.Python tests in test_svm.py" />
       <item itemvalue="Python tests.Python tests for test_DecisionTree.test_cross_validation" />
+      <item itemvalue="Python tests.Python tests in test_DecisionTree.py" />
+      <item itemvalue="Python tests.Python tests in test_svm.py" />
+      <item itemvalue="Python tests.Python tests in tests" />
+      <item itemvalue="Python tests.pytest in bin" />
     </list>
     <recent_temporary>
       <list>

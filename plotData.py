@@ -6,7 +6,20 @@ import math
 
 def plotData(X_test, y_test, y_pred, feature1, feature2, model):
     """
-    @author: Ala Eddine
+     Plots binary classification of the true model and the predicted model with 2 chosen
+    features among the list of features
+
+    Parameters
+    ----------
+    X_test : data features for test.
+    y_test : ground truth classes.
+    y_pred : predicted classes.
+    feature1 : first feature chosen among the list of all features.
+    feature2 : second feature chosen among the list of all features.
+    model : classifier model(DecisionTreeClassifier, RandomForestClassifier and AdaBoostClassifier).
+
+    Returns
+    -------
     """
 
     N = X_test.shape[0]

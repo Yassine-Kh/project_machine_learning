@@ -4,6 +4,7 @@ import numpy
 
 from models.neural_network import NeuralNetwork, bestParameters
 from utils import CleanData
+
 """
     @author: Yassine Khalsi
 """
@@ -31,11 +32,13 @@ def test_class_neural_network(data, request):
     neural_model = NeuralNetwork(solver="lbfgs", layers_sizes=(5, 2), activation="logistic", learning_rate=0.001)
     assert neural_model.assertEqual(str(neural_model), 'Please train your model first')
 
+
 def test_assertEqual():
-        param1 = "test"
-        param2 = "test"
-        param3 = "test3"
-        assert param1 == param2 and param3 != param1
+    param1 = "test"
+    param2 = "test"
+    param3 = "test3"
+    assert param1 == param2 and param3 != param1
+
 
 @pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
 def test_fitAndScore(data, request):
@@ -47,6 +50,7 @@ def test_fitAndScore(data, request):
     assert neural_model.assertEqual(str(neural_model), 'Please train your model first')
     neural_model.fitAndScore(X_train, X_test, y_train)
     assert not neural_model.assertEqual(str(neural_model), 'Please train your model first')
+
 
 @pytest.mark.parametrize("data", ["clean_data_class_banknote", "clean_data_class_kidney"])
 def test_bestParameters(data, request):
