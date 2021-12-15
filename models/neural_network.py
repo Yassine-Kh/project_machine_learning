@@ -25,7 +25,7 @@ class NeuralNetwork:
         @author: Achraf
         """
         self.model.fit(X_train, y_train)
-        return self.model.score(X_test, y_test)
+        return self.model.predict(X_test)
 
     def assertEqual(self, param, param1):
         return param == param1

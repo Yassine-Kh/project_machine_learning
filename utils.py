@@ -127,4 +127,3 @@ data1 = CleanData("https://archive.ics.uci.edu/ml/machine-learning-databases/002
 column_names = ["variance", "skewness", "curtosis", "entropy", "classification"]
 essain = data1.scaleData(data1.df)
 X_train, X_test, y_train, y_test = data1.splitData(1 / 3, 42, column_names)
-print(len(X_test) == len(essain)/3)
